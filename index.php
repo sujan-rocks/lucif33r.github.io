@@ -1,2 +1,0 @@
-Broken AI
-Sujan Sharma
