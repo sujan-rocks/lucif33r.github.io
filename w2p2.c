@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////////////////////////////////
-						  Workshop - #2 (P1)
+						  Workshop - #2 (P2)
 Full Name  : Sujan Sharma
 Student ID#: 157775222
 Email      : ssharma627@myseneca.ca
