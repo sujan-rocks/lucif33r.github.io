@@ -1,0 +1,38 @@
+1.
+=> The code initializes two floating-point variables, price1 and price3, with values 17.96 and 17.98, respectively. However, price1 is represented as a float, which has limited precision for decimal numbers. When you multiply price1 by 100 and cast the result to an integer, it can introduce a precision error due to the imprecise representation of 17.96 in a float. As a result, the converted cent value for price1 may not accurately represent the intended value.In contrast, price2, price3, and price4 are declared as double, which provides higher precision for these decimal values. Consequently, when you multiply and cast these double values to integers, you get cent values that are much closer to the intended values. The precision of the data type used (float vs. double) is the key factor here, with float leading to a loss of precision for the specific value 17.96, while double maintains better accuracy
+
+2.
+=> In the given code, there is an integer variable 'money' with the value 7245. it is intended to print this value as a dollar amount with two decimal places. to achieve the result division was performed by 100 in three different ways, and all three examples work as intended.
+
+In the first example, 'money / 100.0', the use of the '100.0' literal forces the division to involve a double operand, leading to an accurate result. This demonstrates implicit type promotion, where the integer 'money' is automatically promoted to a double for the division.
+
+In the second example, 'money / (double)100', integer  '100' is explicitly casted to a double. This casting ensures that both operands in the division are doubles, preventing integer division and yielding the correct result.
+
+The third example, '(double)money / 100', involves casting the 'money' variable to a double before division. Again, this explicit casting ensures that the division is performed with floating-point numbers, resulting in an accurate representation of the division.
+
+Overall, these examples illustrate the importance of using appropriate data types and casting to achieve the desired precision when performing arithmetic operations involving mixed data types in C.
+
+3.
+a) What is the value of the variable result? Explain why.
+
+=> In this line, integer division is performed with money / 100. Since both money and 100 are integers, this results in integer division, where the fractional part is truncated. So, result will have the value 72, which is the result of 7245 divided by 100 without decimal places.
+
+b) What values are displayed for samples 1, 2, 3, and 4?
+
+#sample 1.
+=> Sample 1 attempts to print the result of money / 100 as a double with two decimal places. However, money / 100 is an integer division, and the result is implicitly cast to a double. The output will be 1. $72.00.
+
+
+#Sample 2
+=> sample 2 attempts to print the result of money / 100 as an integer. The fractional part is truncated, and the output will be 2. $72.
+
+#sample 3
+=> sample 3 prints the value of the result variable, which is 72. It is printed as a double with two decimal places, resulting in 3. $72.00.
+
+#sample 4
+=> sample 4 prints the value of the result variable as an integer. The fractional part is truncated, and the output will be 4. $72.
+
+c) What can you conclude about the printf function that causes samples 1 and 3 not to work as expected?
+=> The printf function works as expected, but the unexpected behavior in samples 1 and 3 is due to the fact that money / 100 is integer division, which results in truncation of the fractional part. In sample 1, the %lf format specifier attempts to interpret the result as a double, but the result is implicitly cast to a double after the integer division, so it appears as if it has decimal places, even though they are actually zeros. In sample 3, result is an integer variable, and the %lf format specifier is used to print it as a double with two decimal places, but it still shows .00 because result itself is an integer.
+
+In summary, the printf function behaves as expected, but the unexpected results in samples 1 and 3 are due to the use of integer division and how the %lf format specifier interprets the values.
